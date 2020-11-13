@@ -21,7 +21,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 
+<style>
+  #main{
 
+    width:60vh;
+    height:80vh;
+    margin:auto
+
+  }
+</style>
     <title>Hello, world!</title>
   </head>
   <body>
@@ -44,7 +52,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item mr-4">
-            <a id="nav-links" class="nav-link" href="#"
+            <a id="nav-links" class="nav-link" href="./index.html"
               >Home</a
             >
           </li>
@@ -65,6 +73,7 @@
             <a id="nav-links" class="nav-link" href="#"
               >My List</a>
           </li>
+          
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <div id="search-icon" class="btn mb-1 mr-2">
@@ -95,160 +104,86 @@
             </div>
         </form>
     </nav>
-    <main id="main" class="container-fluid pl-5 pr-0">
-			<h3 class="mt-4 text-white ml-2 mt-5 mb-3">Trending Now</h3>
-			<div class="row no-gutters">
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="./movies/papel.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/power.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/punisher.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/stranger.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/witcher.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/alive.jpg" />
-				</div>
-			</div>
+   
+<div class= "container">
+  <div id="main" class="text-white">
+    <h2 class="text-center mt-5">Create/Edit/Delete Movie</h2>
+    <img src="" id="image" class="mx-auto" width="250">
+    <form onsubmit="handleSubmit(event)">
+  <div class="form-group">
+    <label for="name">Movie Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Write here the product name"
+      required
+    />
+  </div>
 
-			<h3 class="text-white ml-2 mt-5 mb-3">Watch it again</h3>
-			<div class="row no-gutters">
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="./movies/dark.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/bird-box.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/orange.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/whispers.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/re.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/ozark.jpg" />
-				</div>
-			</div>
-
-			<h3 class="text-white ml-2 mt-5 mb-3">New Realeases</h3>
-			<div class="row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-4">
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/umbrella.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/mysteries.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/Unorthodox.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/cursed.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/eddy.jpg" />
-				</div>
-				<div class="col text-center col-6 col-md-4 col-lg-2 mb-3 px-1">
-					<img class="img-fluid rounded" src="movies/Killer.jpeg" />
-				</div>
-			</div>
-    </main>
-
-
-
-    <footer class="container ">
-          
-          <div class= "social-links"> 
-              <a class="social-link" href="https://www.youtube.com/netflixturkiye" target="blank" aria-label="youtube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a class="social-link" href="https://www.instagram.com/netflixturkiye" target="blank" aria-label="instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a class="social-link" href="https://twitter.com/netflixturkiye" target="blank" aria-label="twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a class="social-link" href="https://www.facebook.com/netflixturkiye" target="blank" aria-label="facebook">
-                <i class="fab fa-facebook-square "></i>
-              </a>
-          </div>
-
-          
-              
-                <div class= "wrap-links d-flex flex-wrap">
-                        
-                          
-                           
-                                <a   href="https://www.netflix.com/browse/subtitles" class= "member-footer-link-content"> Audio &Subtitles </a> 
-                            
-
-                           
-                                <a   href=""  class= "member-footer-link-content"> Audio Description </> 
-                            
-                           
-                                <a  href=""  class= "member-footer-link-content">Media Center </a> 
-                            
-                           
-                                <a  href=""  class= "member-footer-link-content"> Privacy </a> 
-                            
-                           
-                                <a  href=""  class= "member-footer-link-content"> Cookie Preferences </a> 
-                            
-                            
-                           
-                                <a  href="" class= "member-footer-link-content"> Contact Us </a> 
-                            
-                       
-                   
-                           
-                                <a  href="" class= "member-footer-link-content"> Audio Description </a>   
-                            
-                           
-                                <a  href="" class= "member-footer-link-content">Gift Cards </a> 
-                            
-                           
-                                <a  href=""  class= "member-footer-link-content">Investor Relations</a> 
-                            
-
-                           
-                                <a  href="" class= "member-footer-link-content"> Terms of Use </a> 
-                            
-                           
-                                <a  href=""  class= "member-footer-link-content"> Legal Provisions </a> 
-                            
-                           
-                                <a  href="" class= "member-footer-link-content">Corporate Information</a> 
-                            
-                            
-                        
-                      </div>
-                   
-                    
-                    
-                   
-                    
-                        <div>
-                          <span id="serviceCode" class= "member-footer-link-content   p-2" > Service Code </span> 
-                        </div>
-                            
-                           
-                        <div class="member-footer-copywrite"> 
-                            <span> 1997-2020  Netflix Inc</span>
-                        </div>     
-                
+  <div class="form-group">
+    <label for="description">Movie Description</label>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="3"
+      placeholder="Write here the event description"
+      required
+    ></textarea>
+  </div>
+  <div class="form-group">    
+    <label for="category">Movie Category</label>
+     <select required id="category">
+      <option value="Horror">Horror</option>
+      <option value="Art">Art</option> 
+      <option value="Comedy">Comedy</option> 
+      <option value="Science- Fiction">Science- Fiction</option> 
+      <option value="Action">Action</option> 
+      <option value="Drama">Drama</option>
+      <option value="Fantasy">Fantasy</option>  
+      <option value="Western">Western</option>  
+      <option value="Thriller">Thriller</option>  
+      <option value="Documentary">Documentary</option>
+      <option value="Distopian">Distopian</option>             
             
+       </select>
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Movie Image URL</label>
+    <input type="text" required id="imageUrl" />
+  </div>
 
-        
-    </footer>
+  
+
+
+  <div class="form-group">
+    <button
+      class="btn btn-success"
+      type="submit"
+      value="Submit"
+    > <span
+    class="spinner-border spinner-border-sm text-warning d-none"
+    role="status"
+    aria-hidden="true"
+    id="loadingSpinner"
+  ></span>
+      Create/Edit
+    </button>
+
+    <button
+              class="btn btn-danger"
+              type="button"
+              value="DELETE"
+              id="deleteBTN"
+              onclick="handleDelete()"
+            >
+              Delete Product
+    </button>
+  </div>
+</form>
+  </div>
+</div>
+    
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -266,5 +201,46 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/68fbc1d12b.js" crossorigin="anonymous"></script>
+    <script> 
+
+const handleSubmit = (e) => {
+        e.preventDefault(); 
+        submitMovie();
+         };
+
+         const url= "https:striveschool-api.herokuapp.com/api/movies/"
+
+  const submitMovie= async () => {
+    let spinner = document.querySelector("#loadingSpinner");
+      spinner.classList.toggle("d-none"); 
+
+   
+    let newMovie= {
+                name: document.getElementById('name').value,
+                description:document.getElementById('description').value ,
+                category:document.querySelector('select').value,
+                imageUrl:document.getElementById('imageUrl').value ,
+            }
+    try{
+
+      let response=await fetch("https:striveschool-api.herokuapp.com/api/movies/"
+,{ 
+      method:"POST",
+      body:JSON.stringify(newMovie),
+      headers: new Headers({ "Content-Type": "application/json" ,
+      "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFlNGRhZmFkOGMzODAwMTc1YTMxYjAiLCJpYXQiOjE2MDUyNjMyNDEsImV4cCI6MTYwNjQ3Mjg0MX0.2wS2vqKOgwvGs8sqWRA3Uy5WjIT9mrxctVexGeSB5Vo",
+            })
+      })
+ 
+    if  (response.ok) {spinner.classList.toggle("d-none");  window.location.assign("./index.html")};
+      }
+    catch(error) {console.log(error)}
+  
+  }
+
+
+ 
+
+    </script>
   </body>
 </html>
