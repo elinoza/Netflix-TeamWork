@@ -134,6 +134,7 @@
   <div class="form-group">    
     <label for="category">Movie Category</label>
      <select required id="category">
+      <option value="">Default</option>
       <option value="Horror">Horror</option>
       <option value="Art">Art</option> 
       <option value="Comedy">Comedy</option> 
@@ -144,8 +145,8 @@
       <option value="Western">Western</option>  
       <option value="Thriller">Thriller</option>  
       <option value="Documentary">Documentary</option>
-      <option value="Distopian">Distopian</option>             
-            
+      <option value="Distopian">Distopian</option>    
+                
        </select>
   </div>
   <div class="form-group">
@@ -203,19 +204,94 @@
     <script src="https://kit.fontawesome.com/68fbc1d12b.js" crossorigin="anonymous"></script>
     <script> 
 
+
+const url= "https:striveschool-api.herokuapp.com/api/movies/"
+
+window.onload=()=> {
+        
+
+
+        fetch(url,{
+        headers: {
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFlNGRhZmFkOGMzODAwMTc1YTMxYjAiLCJpYXQiOjE2MDUyNjMyNDEsImV4cCI6MTYwNjQ3Mjg0MX0.2wS2vqKOgwvGs8sqWRA3Uy5WjIT9mrxctVexGeSB5Vo",
+            }
+        })
+        .then((response) => {
+          if (response.ok) {
+        
+            return response.json();
+            }
+         })
+        .then((body) => {
+                body.forEach(el=>{              
+                  fetch(url+ el,{
+                      headers: {
+                          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFlNGRhZmFkOGMzODAwMTc1YTMxYjAiLCJpYXQiOjE2MDUyNjMyNDEsImV4cCI6MTYwNjQ3Mjg0MX0.2wS2vqKOgwvGs8sqWRA3Uy5WjIT9mrxctVexGeSB5Vo",
+                          }
+                      })
+                      .then((response) => {
+                      if (response.ok) {
+                    
+                        return response.json();
+                        }
+                      })
+                    .then((body) => {
+
+                     body.forEach(e=>{ 
+                      let urlParams = new URLSearchParams(window.location.search);
+                      id = urlParams.get("id");
+                      
+                      if (e._id===id){
+                      document.getElementById("name").value = e.name;
+                      document.getElementById("description").value = e.description;         
+                      document.getElementById("imageUrl").value = e.imageUrl;
+                      document.getElementById("image").src = e.imageUrl;
+                      document.getElementById("category").value = e.category;
+                        }
+                                      
+                       })
+                      
+                      
+                      
+                    // document.getElementById("category").value = e.category;
+                            
+                                                         
+                               
+                          
+                              
+                            
+                                          
+                      })
+                  
+                    .catch((err) => {
+                      //alert("AN ERROR HAS OCCURRED  " + err);
+                      console.error(err)     
+                    })
+                })
+            
+           
+            
+        })
+  
+      }
+
+   
+     
+
+
+
 const handleSubmit = (e) => {
         e.preventDefault(); 
         submitMovie();
          };
 
-         const url= "https:striveschool-api.herokuapp.com/api/movies/"
-
+         
   const submitMovie= async () => {
     let spinner = document.querySelector("#loadingSpinner");
       spinner.classList.toggle("d-none"); 
 
    
-    let newMovie= {
+let newMovie= {
                 name: document.getElementById('name').value,
                 description:document.getElementById('description').value ,
                 category:document.querySelector('select').value,
@@ -237,6 +313,16 @@ const handleSubmit = (e) => {
     catch(error) {console.log(error)}
   
   }
+
+
+  const getinfo=function(e){
+     
+     document.getElementById("name").value = e.name;
+     document.getElementById("description").value = e.description;         
+     document.getElementById("imageUrl").value = e.imageUrl;
+     document.getElementById("image").src = e.imageUrl;
+     document.getElementById("category").value = e.category;
+ }
 
 
  
