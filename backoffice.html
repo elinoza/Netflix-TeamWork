@@ -255,11 +255,7 @@ window.onload=()=> {
                       
                     // document.getElementById("category").value = e.category;
                             
-                                                         
-                               
-                          
-                              
-                            
+                           
                                           
                       })
                   
@@ -275,6 +271,24 @@ window.onload=()=> {
   
       }
 
+      const handleDelete = async () => {
+       
+       try {
+         const response = await fetch(url+id , 
+         { method: "DELETE",headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFiYzVlNDRiY2RlMTAwMTc2MTZhOGMiLCJpYXQiOjE2MDUwOTI4MzYsImV4cCI6MTYwNjMwMjQzNn0.WhMSFCkXM7Kce2PHfWpeMJzgGollHyDrz9caaKXZzs4",
+                                     } });
+         if (response.ok) {
+           
+           alert("Event deleted successfully");
+           location.assign("d8.html");
+         } else {
+           alert("Something went wrong!");
+         }
+       } catch (error) {
+         console.log(error);
+       }
+     };
+        
    
      
 
@@ -315,14 +329,7 @@ let newMovie= {
   }
 
 
-  const getinfo=function(e){
-     
-     document.getElementById("name").value = e.name;
-     document.getElementById("description").value = e.description;         
-     document.getElementById("imageUrl").value = e.imageUrl;
-     document.getElementById("image").src = e.imageUrl;
-     document.getElementById("category").value = e.category;
- }
+ 
 
 
  
